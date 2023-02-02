@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Search Page</title>
+    <% include partials/head %> <!--This imports the css and the header-->
+</head>
+    
+    <div class="wrapper">
+        <h1><%= title %></h1>
+        <h2>If this section is empty, that means there is no data attached to the name, please go back and search again with a name in our databases.</h2>
+        <body>
+            <table class="table table-inverse">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Total</th>
+        <th>Shopping</th>
+        <th>Education</th>
+        <th>Browsing</th>
+        <th>Social Media</th>
+        <th>Time Created/Edited</th>
+
+      </tr>
+    </thead> <!--This displays the headings for the entrys that will display-->
+
+    <tbody>
+      <% for(var i=0; i < search.length; i++) { %>
+     <tr>
+
+       <td><%= search[i].name %></td>
+       <td><%= search[i].total %></td>
+       <td><%= search[i].shopping %></td>
+       <td><%= search[i].education %></td>
+       <td><%= search[i].browsing %></td>
+       <td><%= search[i].socialMedia %></td>
+       <td><%= search[i].createdAt %></td>
+       <td><a class="btn btn1" href="/feedback/edit/<%= search[i].id %>">Edit</a><form style="display: inline-block" action="\feedback\delete\<%= search[i].id %>" method="GET">
+        <button class="btn btn2" type="submit">Delete</button></form></td>
+     </tr>
+  <% } %>
+    </tbody> <!--This displays each user that is found with the name of the user input and displays nothing if no name is found in database -->
+
+  </table>
+
+</body>
+</div>
+
+</html><!--This page displays every entry that matches user input from the find page and displays each entry with an edit and delete button -->

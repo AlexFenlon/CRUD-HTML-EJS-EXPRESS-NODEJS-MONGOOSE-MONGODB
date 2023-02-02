@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Forum Page</title>
+    <% include partials/head %> <!--This imports the css and the header-->
+</head>
+<body>
+    <h1>Please fill your phone usage in the forum below:</h1>
+    <form method="POST" action="/feedback">
+        <div class="form-group">
+        <label>(required) Today's Total Phone Usage :<input type="time" name="total"required></label>
+        <br>          
+        <label>Today's Total Time Spent Shopping :<input type="time" name="shopping" ></label>
+        <br>
+        <label>Today's Total Time Spent on Education :<input type="time" name="education"></label>
+        <br>
+        <label>Today's Total Time Spent Browsing :<input type="time" name="browsing"></label>
+        <br>
+        <label>Today's Total Time Spend on Social Media :<input type="time" name="socialMedia"></label>
+        <br>
+        <label>(required) Name - <input type="text" name="name" required></label>
+        <br>
+                </div>
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html> <!--This displays the forum page which allows users to input their data-->

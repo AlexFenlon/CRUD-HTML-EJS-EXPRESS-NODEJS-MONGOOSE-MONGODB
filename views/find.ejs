@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Find Page</title>
+    <% include partials/head %> <!--This imports the css and the header-->
+</head>
+<body>
+    <h1>Please fill in the name you would like to search for. Note it is case sensitive.</h1>
+    <form method="POST" action="/feedback/find">
+        <div class="find-group">
+        <label>Name:<input type="text" name="name" required></label>
+        <input type="submit" value="Submit">
+    </div>
+    </form>
+</body>
+</html> <!--This displays the find page with a user input box for user to search for database entry-->

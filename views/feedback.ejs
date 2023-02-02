@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Feedback Page</title>
+    <% include partials/head %> <!--This imports the css and the header-->
+</head>
+    
+    <div class="wrapper">
+        <h1><%= title %></h1>
+        <body>
+            <table class="table table-inverse">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Total</th>
+        <th>Shopping</th>
+        <th>Education</th>
+        <th>Browsing</th>
+        <th>Social Media</th>
+        <th>Time Created/Updated</th>
+
+      </tr>
+    </thead><!--This displays the headings for the entrys that will display-->
+
+    <tbody>
+      <% for(var i=0; i < usagelist.length; i++) { %>
+     <tr>
+
+       <td><%= usagelist[i].name %></td>
+       <td><%= usagelist[i].total %></td>
+       <td><%= usagelist[i].shopping %></td>
+       <td><%= usagelist[i].education %></td>
+       <td><%= usagelist[i].browsing %></td>
+       <td><%= usagelist[i].socialMedia %></td>
+       <td><%= usagelist[i].createdAt %></td>
+       <td><a class="btn btn1" href="/feedback/edit/<%= usagelist[i].id %>">Edit</a><form style="display: inline-block" action="\feedback\delete\<%= usagelist[i].id %>" method="get">
+        <button class="btn btn2" type="submit">Delete</button></form></td>
+     </tr>
+  <% } %>
+    </tbody> <!--This displays every entry in the database -->
+
+  </table>
+
+</body>
+</div>
+
+</html><!--This goes though every entry and displays it to the user, this page is not currently shown to user, only if they go to localhost:3000/feedback on a get request-->

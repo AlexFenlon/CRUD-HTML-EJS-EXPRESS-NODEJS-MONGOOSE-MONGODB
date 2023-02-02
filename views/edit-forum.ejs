@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <% include partials/head %> <!--This imports the css and the header-->
+    <title>Edit Forum Page</title>
+</head>
+<body>
+    <h1>Make your edits below:</h1>
+    <form method="POST" action="/feedback">
+        <div class="form-group">
+        <label>(required) Today's Total Phone Usage :<input type="time" name="total" value ="<%= phoneusage.total %>" required /></label>
+        <br>          
+        <label>Today's Total Time Spent Shopping :<input type="time" name="shopping" value ="<%= phoneusage.shopping %>" /></label>
+        <br>
+        <label>Today's Total Time Spent on Education :<input type="time" name="education" value ="<%= phoneusage.education %>" /></label>
+        <br>
+        <label>Today's Total Time Spent Browsing :<input type="time" name="browsing" value ="<%= phoneusage.browsing %>" /></label>
+        <br>
+        <label>Today's Total Time Spend on Social Media :<input type="time" name="socialMedia" value ="<%= phoneusage.socialMedia %>" /></label>
+        <br>
+        <label>(required) Name - <input type="text" name="name" required value ="<%= phoneusage.name %>" /></label>
+        <br>
+                </div>
+
+        <input type="submit" value="Submit">
+    </form>
+</body> <!--This a fourm for use when user edits their database entry. it assigns each input to the value of the entry in the database and submits it back to the database-->
+</html
